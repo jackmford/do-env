@@ -20,7 +20,6 @@ resource "digitalocean_droplet" "node-1" {
       "export PATH=$PATH:/usr/bin",
       # update
       "sudo apt update",
-      "sudo apt upgrade",
     ]
   }
 }
