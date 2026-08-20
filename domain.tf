@@ -1,10 +1,13 @@
-resource "digitalocean_domain" "jmf" {
-  name       = "jackmitchellfordyce.com"
-  ip_address = digitalocean_droplet.node-1.ipv4_address
+resource "digitalocean_record" "A-jmf" {
+  domain = "jackmitchellfordyce.com"
+  type   = "A"
+  name   = "@"
+  value  = digitalocean_droplet.node-2.ipv4_address
+  ttl    = 1800
 }
 
 resource "digitalocean_record" "CNAME-jmf" {
-  domain = digitalocean_domain.jmf.name
+  domain = "jackmitchellfordyce.com"
   type   = "CNAME"
   name   = "www"
   value  = "@"
