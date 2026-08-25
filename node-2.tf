@@ -1,8 +1,3 @@
-resource "digitalocean_droplet_snapshot" "node-1-before-ubuntu-24-04" {
-  droplet_id = digitalocean_droplet.node-1.id
-  name       = "node-1-before-ubuntu-24-04"
-}
-
 resource "digitalocean_droplet" "node-2" {
   image  = "ubuntu-24-04-x64"
   name   = "node-2"
